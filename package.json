@@ -1,0 +1,54 @@
+{
+  "name": "eye-exam-monorepo",
+  "version": "1.0.0",
+  "description": "Eye Exam - YOLO Detection System",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "install:all": "npm run install:frontend && npm run install:backend",
+    "dev:frontend": "cd frontend && npm run dev:fast",
+    "dev:backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:fast": "concurrently --kill-others \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:frontend": "cd frontend && npm run build",
+    "build": "npm run build:frontend",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm start",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd backend && npm test",
+    "test": "npm run test:frontend && npm run test:backend",
+    "clean:all": "rimraf frontend/node_modules backend/node_modules frontend/dist backend/uploads/* frontend/.react-router frontend/node_modules/.vite",
+    "clean:cache": "rimraf frontend/.react-router frontend/node_modules/.vite frontend/dist",
+    "fresh": "npm run clean:cache && npm run dev:fast",
+    "reset": "npm run clean:all && npm run install:all",
+    "quick-start": "powershell -ExecutionPolicy Bypass -File start-dev.ps1",
+    "lint": "echo 'Add linting scripts here'"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.5"
+  },
+  "keywords": [
+    "yolo",
+    "detection",
+    "react",
+    "express",
+    "exam",
+    "monitoring"
+  ],
+  "author": "Eye Exam Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "react-markdown": "^10.1.0"
+  }
+}
