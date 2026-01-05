@@ -91,6 +91,9 @@ export const authHelpers = {
 
   // Sign in with Google
   signInWithGoogle: async () => {
+    // Get the current origin (works for both localhost and deployed versions)
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
@@ -98,7 +101,8 @@ export const authHelpers = {
           access_type: 'offline',
           prompt: 'consent',
         },
-        redirectTo: `${window.location.origin}/auth/callback`,
+        // Use the correct redirect URL format
+        redirectTo: `${origin}/auth/callback`,
       },
     })
     if (error) throw error

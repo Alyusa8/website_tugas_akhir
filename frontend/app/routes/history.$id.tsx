@@ -2,6 +2,7 @@ import type { MetaFunction } from "react-router";
 import { NavLink, useParams } from "react-router";
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
@@ -292,103 +293,7 @@ export default function HistoryDetail() {
       </div>
 
       {/* Footer */}
-      <footer className="py-12" style={{backgroundColor: '#2C3E50', color: '#F7FAFC'}}>
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            {/* Logo and Description */}
-            <div className="col-span-1">
-              <div className="flex items-center space-x-3 mb-4">
-                <img 
-                  src="/images/EYEEXAM-Logo.png" 
-                  alt="Eye Exam Logo" 
-                  className="h-12 w-auto"
-                />
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Platform ujian online dengan teknologi deteksi gerakan untuk menjaga integritas ujian.
-              </p>
-            </div>
-
-            {/* Fitur */}
-            <div>
-              <h4 className="font-semibold mb-4">Fitur</h4>
-              <ul className="space-y-2 text-sm">
-                <li><NavLink to="/" className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'}>Beranda</NavLink></li>
-                <li><NavLink to="/detection" className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'}>Deteksi YOLO</NavLink></li>
-                <li><NavLink to="/history" className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'}>Histori</NavLink></li>
-                <li><NavLink to="/articles" className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'}>Artikel</NavLink></li>
-                <li><NavLink to="/about" className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#F7FAFC'}>Tentang Kami</NavLink></li>
-              </ul>
-            </div>
-
-            {/* Interaksi dengan Kami */}
-            <div>
-              <h4 className="font-semibold mb-4">Interaksi dengan Kami</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center space-x-3 hover:opacity-80 transition-opacity cursor-pointer">
-                  <a href="https://instagram.com/eye_exam" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 hover:transform hover:scale-105 transition-all">
-                    <img 
-                      src="/images/instagramlogo.png" 
-                      alt="Instagram Logo" 
-                      className="h-6 w-6 object-contain"
-                    />
-                    <span className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}}>Eye_Exam</span>
-                  </a>
-                </li>
-                <li className="flex items-center space-x-3 hover:opacity-80 transition-opacity cursor-pointer">
-                  <a href="https://facebook.com/eyeexam" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 hover:transform hover:scale-105 transition-all">
-                    <img 
-                      src="/images/facebooklogo.jpg" 
-                      alt="Facebook Logo" 
-                      className="h-6 w-6 object-contain rounded-lg"
-                    />
-                    <span className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}}>@Eye_Exam</span>
-                  </a>
-                </li>
-                <li className="flex items-center space-x-3 hover:opacity-80 transition-opacity cursor-pointer">
-                  <a href="https://x.com/eyeexam" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-3 hover:transform hover:scale-105 transition-all">
-                    <img 
-                      src="/images/Xlogo.jpg" 
-                      alt="X Logo" 
-                      className="h-6 w-6 object-contain rounded-lg"
-                    />
-                    <span className="text-gray-300 transition-colors" style={{color: '#F7FAFC'}}>@EyeExam</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Hubungi Kami */}
-            <div>
-              <h4 className="font-semibold mb-4">Hubungi Kami</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center space-x-3">
-                  <img 
-                    src="/images/gmaillogo.png" 
-                    alt="Gmail Logo" 
-                    className="h-6 w-6 object-contain"
-                  />
-                  <span className="text-gray-300" style={{color: '#F7FAFC'}}>eyeexam@gmail.com</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <img 
-                    src="/images/kontaklogo.jpg" 
-                    alt="Phone Logo" 
-                    className="h-6 w-6 object-contain rounded-lg"
-                  />
-                  <span className="text-gray-300" style={{color: '#F7FAFC'}}>+62 896-0872-7717</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-8 pt-4 text-right" style={{borderTop: '1px solid #60A5FA'}}>
-            <p className="text-sm" style={{color: '#F7FAFC'}}>
-              Copyright © 2025 Eye Exam. Semua Hak Dilindungi.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
